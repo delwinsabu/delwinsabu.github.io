@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delwin Sabu - Technical Lead & Product Owner</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#14b8a6',
+                        secondary: '#d946ef',
+                        accent: '#eab308'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #14b8a6 0%, #d946ef 100%);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #14b8a6 0%, #d946ef 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .typing-animation {
+            border-right: 2px solid #14b8a6;
+            animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: #14b8a6;
+            }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .slide-in-right {
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .skill-bar {
+            width: 0%;
+            transition: width 2s ease-in-out;
+        }
+
+        .skill-bar.animate {
+            width: var(--width);
+        }
+
+        .timeline-item {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease-out;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .project-card {
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #eab308;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <nav class="fixed top-0 w-full z-50 gradient-bg shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <link rel="preconnect" href="https://fonts.googleapis.com">
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
+                        rel="stylesheet">
+                    <h1 class="text-white text-xl font-bold" style="font-family: 'Montserrat', sans-serif;">Delwin Sabu
+                    </h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home"
+                            class="nav-link text-white hover:text-accent px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                        <a href="#about"
+                            class="nav-link text-white hover:text-accent px-3 py-2 text-sm font-medium transition-colors">About</a>
+                        <a href="#experience"
+                            class="nav-link text-white hover:text-accent px-3 py-2 text-sm font-medium transition-colors">Experience</a>
+                        <a href="#skills"
+                            class="nav-link text-white hover:text-accent px-3 py-2 text-sm font-medium transition-colors">Skills</a>
+                        <!-- <a href="#projects"
+                            class="nav-link text-white hover:text-accent px-3 py-2 text-sm font-medium transition-colors">Projects</a> -->
+                        <a href="#contact"
+                            class="nav-link text-white hover:text-accent px-3 py-2 text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-white hover:text-accent p-2">
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-menu-line ri-lg"></i>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden gradient-bg">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block text-white hover:text-accent px-3 py-2 text-base font-medium">Home</a>
+                <a href="#about" class="block text-white hover:text-accent px-3 py-2 text-base font-medium">About</a>
+                <a href="#experience"
+                    class="block text-white hover:text-accent px-3 py-2 text-base font-medium">Experience</a>
+                <a href="#skills" class="block text-white hover:text-accent px-3 py-2 text-base font-medium">Skills</a>
+                <!-- <a href="#projects" class="block text-white hover:text-accent px-3 py-2 text-base font-medium">Projects</a> -->
+                <a href="#contact"
+                    class="block text-white hover:text-accent px-3 py-2 text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden"
+        style="background-image: url('https://readdy.ai/api/search-image?query=modern%20abstract%20geometric%20background%20with%20teal%20magenta%20yellow%20gradient%20flowing%20shapes%20professional%20tech%20atmosphere%20minimal%20clean%20design%20digital%20innovation%20pattern&width=1920&height=1080&seq=hero-bg&orientation=landscape'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div class="relative z-10 text-center max-w-4xl mx-auto px-4 py-20">
+            <div class="mb-8 floating mt-16 md:mt-0">
+                <div
+                    class="w-32 h-32 md:w-48 md:h-48 mx-auto rounded-full border-4 border-primary shadow-2xl overflow-hidden">
+                    <img src="https://readdy.ai/api/search-image?query=professional%20headshot%20portrait%20of%20confident%20technical%20leader%20software%20developer%20wearing%20business%20casual%20attire%20clean%20background%20modern%20lighting&width=400&height=400&seq=profile-pic&orientation=squarish"
+                        alt="Delwin Sabu" class="w-full h-full object-cover object-top">
+                </div>
+            </div>
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 slide-in-left">
+                Hi, I'm <span class="gradient-text">Delwin Sabu</span>
+            </h1>
+            <div
+                class="text-lg sm:text-xl md:text-2xl text-white mb-8 h-16 flex items-center justify-center slide-in-right">
+                <span id="typing-text" class="typing-animation whitespace-nowrap overflow-hidden px-4"></span>
+            </div>
+            <p class="text-base sm:text-lg text-gray-200 mb-4 max-w-2xl mx-auto fade-in-up px-4">
+                Award-winning innovator and mentor in enterprise software solutions. </p>
+            <p class="text-base sm:text-lg text-gray-200 mb-12 max-w-2xl mx-auto fade-in-up px-4">
+                Passionate Technical Lead, Product Owner & Skilled Entrepreneur with 10+ years of experience in
+                enterprise software delivery and BSS systems</p>
+            <div class="flex justify-center space-x-6 mb-12 fade-in-up">
+                <a href="mailto:delwinsabu@gmail.com"
+                    class="w-12 h-12 flex items-center justify-center bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition-all hover:scale-110">
+                    <i class="ri-mail-line ri-lg text-white"></i>
+                </a>
+                <a href="#"
+                    class="w-12 h-12 flex items-center justify-center bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition-all hover:scale-110">
+                    <i class="ri-linkedin-fill ri-lg text-white"></i>
+                </a>
+                <a href="#"
+                    class="w-12 h-12 flex items-center justify-center bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition-all hover:scale-110">
+                    <i class="ri-github-fill ri-lg text-white"></i>
+                </a>
+            </div>
+            <div class="scroll-indicator">
+                <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+                    <div class="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gradient-text mb-4">About Me</h2>
+                <p class="text-gray-600 text-lg">Passionate about creating meaningful digital solutions</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Professional Summary</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        <!-- Dynamic and accomplished Senior Technical Lead & Product Owner with more than 10 years of
+                        experience driving enterprise software delivery, specializing in telecom BSS systems. I have a
+                        proven track record of launching innovative, award-winning tech solutions. My skill set
+                        encompasses full-stack development with expertise in Java, Spring Boot, JavaScript, and React,
+                        alongside proficiency in CI/CD, DevOps, and end-to-end delivery. I excel in leading Agile Scrum
+                        teams to deliver high-impact projects with precision and efficiency. -->
+                        Dynamic and accomplished Senior Technical Lead & Product Owner with over a decade of expertise in enterprise software delivery. Skilled in cross-functional leadership, Agile Scrum Delivery, and proficient in DevOps, CI/CD, and full-stack development (Java, Spring Boot,
+                        JavaScript, React). Recognized for
+                        launching innovative, award-winning solutions that drive impact and industry acclaim.
+                    </p>
+                    <div class="mt-6 p-4 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-lg">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Awards & Recognition</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start space-x-2">
+                                <i class="ri-award-line text-primary mt-1"></i>
+                                <span class="text-gray-600 text-sm">Difference Maker Award (2019) - For innovative
+                                    leadership in delivering impactful solutions earning industry recognition</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <i class="ri-award-line text-primary mt-1"></i>
+                                <span class="text-gray-600 text-sm">Super Star Award (2022) - For outstanding leadership
+                                    and execution in driving innovative high-value software solutions</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <i class="ri-medal-line text-primary mt-1"></i>
+                                <span class="text-gray-600 text-sm">Calmer Of The Storms Award (2023) - For resilient
+                                    leadership in resolving complex challenges and delivering stable high-quality
+                                    solutions</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Proven Agile leader with expertise in building scalable multi-tenant systems. I've led
+                        cross-functional teams through architecture design, sprint execution, and DevOps implementation,
+                        delivering impactful solutions efficiently.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Skilled and recognized for delivering customer-centric solutions, mentoring teams and
+                        maintaining
+                        product excellence across the development lifecycle. I excel in in dynamic environments where
+                        innovation, technology, and people intersect.
+                    </p>
+                    <div class="flex flex-wrap gap-3 mt-6">
+                        <span
+                            class="px-4 py-2 bg-primary bg-opacity-10 text-primary rounded-full text-sm font-medium">Product
+                            Owner</span>
+                        <span
+                            class="px-4 py-2 bg-secondary bg-opacity-10 text-secondary rounded-full text-sm font-medium">UX
+                            Enthusiast</span>
+                        <span
+                            class="px-4 py-2 bg-accent bg-opacity-10 text-accent rounded-full text-sm font-medium">Full-Stack
+                            Developer</span>
+                        <span
+                            class="px-4 py-2 bg-primary bg-opacity-10 text-primary rounded-full text-sm font-medium">Solutions
+                            Consultant</span>
+                        <span
+                            class="px-4 py-2 bg-secondary bg-opacity-10 text-secondary rounded-full text-sm font-medium">Technical
+                            Architect</span>
+                        <span
+                            class="px-4 py-2 bg-accent bg-opacity-10 text-accent rounded-full text-sm font-medium">Entrepreneur</span>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Core Competencies</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700">Technical Leadership</span>
+                                <span class="text-sm text-gray-500">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-gradient-to-r from-primary to-secondary h-2 rounded-full"
+                                    style="--width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700">Full-Stack Development</span>
+                                <span class="text-sm text-gray-500">88%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-gradient-to-r from-primary to-secondary h-2 rounded-full"
+                                    style="--width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700">Product Management</span>
+                                <span class="text-sm text-gray-500">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-gradient-to-r from-primary to-secondary h-2 rounded-full"
+                                    style="--width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700">Agile Methodologies</span>
+                                <span class="text-sm text-gray-500">92%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-gradient-to-r from-primary to-secondary h-2 rounded-full"
+                                    style="--width: 92%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700">Team Leadership</span>
+                                <span class="text-sm text-gray-500">94%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-gradient-to-r from-primary to-secondary h-2 rounded-full"
+                                    style="--width: 94%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Experience Timeline</h2>
+                <p class="text-gray-600 text-lg">10+ years of professional excellence</p>
+            </div>
+            <div class="relative">
+                <div
+                    class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary to-secondary">
+                </div>
+                <div class="space-y-12">
+                    <div class="timeline-item flex items-center">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Technical Solutions Consultant & Product Owner</h3>
+                                <p class="text-primary font-medium mb-2">6d Technologies</p>
+                                <p class="text-gray-500 text-sm mb-3">2022 - Present</p>
+                                <p class="text-gray-600 text-sm">Leading cross-functional teams in developing scalable
+                                    multi-tenant systems. Architecting solutions for telecom BSS platforms and mentoring
+                                    junior developers.</p>
+                            </div>
+                        </div>
+                        <div class="w-4 h-4 bg-primary rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+                    <div class="timeline-item flex items-center">
+                        <div class="w-1/2 pr-8"></div>
+                        <div class="w-4 h-4 bg-secondary rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="w-1/2 pl-8">
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Technical Lead & Associate Module Owner</h3>
+                                <p class="text-secondary font-medium mb-2">6d Technologies</p>
+                                <p class="text-gray-500 text-sm mb-3">2020 - 2022</p>
+                                <p class="text-gray-600 text-sm">Managed product roadmap and technical execution for
+                                    enterprise applications. Implemented DevOps practices and agile methodologies across
+                                    multiple teams.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item flex items-center">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Senior Full-Stack Software Developer</h3>
+                                <p class="text-accent font-medium mb-2">6d Technologies</p>
+                                <p class="text-gray-500 text-sm mb-3">2017 - 2020</p>
+                                <p class="text-gray-600 text-sm">Developed end-to-end solutions using Java, Spring Boot,
+                                    JavaScript, and React. Focused on building responsive web applications and RESTful
+                                    APIs.</p>
+                            </div>
+                        </div>
+                        <div class="w-4 h-4 bg-accent rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+                    <div class="timeline-item flex items-center">
+                        <div class="w-1/2 pr-8"></div>
+                        <div class="w-4 h-4 bg-primary rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="w-1/2 pl-8">
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Software Engineer</h3>
+                                <p class="text-primary font-medium mb-2">6d Technologies</p>
+                                <p class="text-gray-500 text-sm mb-3">2015 - 2017</p>
+                                <p class="text-gray-600 text-sm">Started career in telecom BSS systems development.
+                                    Gained expertise in enterprise software architecture and customer-centric solution
+                                    design.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="skills" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Technical Skills</h2>
+                <p class="text-gray-600 text-lg">Comprehensive technology stack expertise</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6">Backend Technologies</h3>
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center mx-auto mb-3 bg-primary bg-opacity-10 rounded-full">
+                                <i class="ri-code-s-slash-line ri-lg text-primary"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Java & Spring Boot</h4>
+                            <p class="text-sm text-gray-600">Enterprise-grade backend development</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center mx-auto mb-3 bg-secondary bg-opacity-10 rounded-full">
+                                <i class="ri-database-2-line ri-lg text-secondary"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Database Design</h4>
+                            <p class="text-sm text-gray-600">SQL & NoSQL database optimization</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center mx-auto mb-3 bg-accent bg-opacity-10 rounded-full">
+                                <i class="ri-server-line ri-lg text-accent"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Microservices</h4>
+                            <p class="text-sm text-gray-600">Scalable architecture design</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6">Frontend Technologies</h3>
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center mx-auto mb-3 bg-primary bg-opacity-10 rounded-full">
+                                <i class="ri-reactjs-line ri-lg text-primary"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 mb-2">React & JavaScript</h4>
+                            <p class="text-sm text-gray-600">Modern web application development</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center mx-auto mb-3 bg-secondary bg-opacity-10 rounded-full">
+                                <i class="ri-css3-line ri-lg text-secondary"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 mb-2">CSS & UI/UX</h4>
+                            <p class="text-sm text-gray-600">Responsive design & user experience</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center mx-auto mb-3 bg-accent bg-opacity-10 rounded-full">
+                                <i class="ri-smartphone-line ri-lg text-accent"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Mobile First</h4>
+                            <p class="text-sm text-gray-600">Cross-platform compatibility</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6">Leadership & Process</h3>
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center mx-auto mb-3 bg-primary bg-opacity-10 rounded-full">
+                                <i class="ri-team-line ri-lg text-primary"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Agile Leadership</h4>
+                            <p class="text-sm text-gray-600">Scrum & Kanban methodologies</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center mx-auto mb-3 bg-secondary bg-opacity-10 rounded-full">
+                                <i class="ri-git-branch-line ri-lg text-secondary"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 mb-2">DevOps & CI/CD</h4>
+                            <p class="text-sm text-gray-600">Automated deployment pipelines</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center mx-auto mb-3 bg-accent bg-opacity-10 rounded-full">
+                                <i class="ri-lightbulb-line ri-lg text-accent"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Product Strategy</h4>
+                            <p class="text-sm text-gray-600">Vision & roadmap planning</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <section id="projects" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Featured Projects</h2>
+                <p class="text-gray-600 text-lg">Showcasing innovative solutions and technical excellence</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-primary to-secondary relative overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=modern%20telecom%20BSS%20billing%20system%20dashboard%20interface%20with%20charts%20graphs%20data%20visualization%20clean%20professional%20design%20technology%20enterprise%20software&width=400&height=300&seq=project-1&orientation=landscape"
+                            alt="Telecom BSS Platform" class="w-full h-full object-cover object-top">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Telecom BSS Platform</h3>
+                        <p class="text-gray-600 text-sm mb-4">Enterprise-grade billing and customer management system
+                            for telecom operators with multi-tenant architecture.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-primary bg-opacity-10 text-primary text-xs rounded">Java</span>
+                            <span class="px-2 py-1 bg-secondary bg-opacity-10 text-secondary text-xs rounded">Spring
+                                Boot</span>
+                            <span class="px-2 py-1 bg-accent bg-opacity-10 text-accent text-xs rounded">React</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <button
+                                class="flex-1 bg-primary text-white py-2 px-4 rounded-button text-sm font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">View
+                                Details</button>
+                            <button
+                                class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-button hover:border-primary transition-colors">
+                                <i class="ri-external-link-line text-gray-600"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-secondary to-accent relative overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=enterprise%20software%20dashboard%20with%20analytics%20charts%20team%20collaboration%20tools%20project%20management%20interface%20modern%20clean%20design%20professional%20technology&width=400&height=300&seq=project-2&orientation=landscape"
+                            alt="Enterprise Analytics Platform" class="w-full h-full object-cover object-top">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Enterprise Analytics Platform</h3>
+                        <p class="text-gray-600 text-sm mb-4">Real-time analytics and reporting platform for enterprise
+                            customers with advanced data visualization.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-2 py-1 bg-primary bg-opacity-10 text-primary text-xs rounded">JavaScript</span>
+                            <span
+                                class="px-2 py-1 bg-secondary bg-opacity-10 text-secondary text-xs rounded">Node.js</span>
+                            <span class="px-2 py-1 bg-accent bg-opacity-10 text-accent text-xs rounded">MongoDB</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <button
+                                class="flex-1 bg-secondary text-white py-2 px-4 rounded-button text-sm font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">View
+                                Details</button>
+                            <button
+                                class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-button hover:border-secondary transition-colors">
+                                <i class="ri-external-link-line text-gray-600"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-accent to-primary relative overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=mobile%20application%20interface%20design%20responsive%20web%20app%20cross%20platform%20development%20modern%20UI%20UX%20clean%20professional%20technology%20innovation&width=400&height=300&seq=project-3&orientation=landscape"
+                            alt="Multi-Tenant SaaS Solution" class="w-full h-full object-cover object-top">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Multi-Tenant SaaS Solution</h3>
+                        <p class="text-gray-600 text-sm mb-4">Scalable SaaS platform serving multiple clients with
+                            customizable workflows and integrations.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-primary bg-opacity-10 text-primary text-xs rounded">React</span>
+                            <span class="px-2 py-1 bg-secondary bg-opacity-10 text-secondary text-xs rounded">AWS</span>
+                            <span class="px-2 py-1 bg-accent bg-opacity-10 text-accent text-xs rounded">Docker</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <button
+                                class="flex-1 bg-accent text-white py-2 px-4 rounded-button text-sm font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">View
+                                Details</button>
+                            <button
+                                class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-button hover:border-accent transition-colors">
+                                <i class="ri-external-link-line text-gray-600"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Get In Touch</h2>
+                <p class="text-gray-600 text-lg">Let's discuss your next project or collaboration opportunity</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full">
+                                    <i class="ri-mail-line ri-lg text-primary"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-800 font-medium">Email</p>
+                                    <p class="text-gray-600">delwinsabu@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center bg-secondary bg-opacity-10 rounded-full">
+                                    <a href="https://www.linkedin.com/in/delwinsabu/" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <i class="ri-linkedin-fill ri-lg text-secondary"></i>
+                                    </a>
+                                </div>
+                                <div>
+                                    <p class="text-gray-800 font-medium">LinkedIn</p>
+                                    <a href="https://www.linkedin.com/in/delwinsabu/" target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="text-gray-600 hover:text-secondary transition-colors">Connect with me
+                                        professionally</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center bg-accent bg-opacity-10 rounded-full">
+                                    <i class="ri-github-fill ri-lg text-accent"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-800 font-medium">GitHub</p>
+                                    <p class="text-gray-600">Check out my code repositories</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-4">Areas of Expertise</h4>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="text-sm text-gray-600">• Technical Leadership</div>
+                            <div class="text-sm text-gray-600">• Product Management</div>
+                            <div class="text-sm text-gray-600">• Full-Stack Development</div>
+                            <div class="text-sm text-gray-600">• Agile Methodologies</div>
+                            <div class="text-sm text-gray-600">• Enterprise Architect</div>
+                            <div class="text-sm text-gray-600">• Team Mentoring</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-lg">
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                            <input type="text"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-sm"
+                                placeholder="Your full name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                            <input type="email"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-sm"
+                                placeholder="your.email@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                            <input type="text"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-sm"
+                                placeholder="Project collaboration opportunity">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea rows="5"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-sm resize-none"
+                                placeholder="Tell me about your project or how we can collaborate..."></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full gradient-bg text-white py-3 px-6 rounded-button font-medium hover:opacity-90 transition-opacity whitespace-nowrap">Send
+                            Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="gradient-bg py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-white text-xl font-bold font-['Pacifico'] mb-4">Delwin Sabu</h3>
+                    <p class="text-gray-200 text-sm">Technical Lead & Product Owner passionate about creating meaningful
+                        digital solutions through innovation and technology.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <div class="space-y-2">
+                        <a href="#about"
+                            class="block text-gray-200 hover:text-accent text-sm transition-colors">About</a>
+                        <a href="#experience"
+                            class="block text-gray-200 hover:text-accent text-sm transition-colors">Experience</a>
+                        <a href="#skills"
+                            class="block text-gray-200 hover:text-accent text-sm transition-colors">Skills</a>
+                        <a href="#projects"
+                            class="block text-gray-200 hover:text-accent text-sm transition-colors">Projects</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="mailto:delwinsabu@gmail.com"
+                            class="w-10 h-10 flex items-center justify-center bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition-all">
+                            <i class="ri-mail-line text-white"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/delwinsabu/" target="_blank" rel="noopener noreferrer"
+                            class="w-10 h-10 flex items-center justify-center bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition-all">
+                            <i class="ri-linkedin-fill text-white"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition-all">
+                            <i class="ri-github-fill text-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white border-opacity-20 pt-8 text-center">
+                <p class="text-gray-200 text-sm">&copy; 2025 Delwin Sabu. All rights reserved. Crafted with passion for
+                    innovation.</p>
+            </div>
+        </div>
+    </footer>
+    <script id="navigation-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuBtn.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+    <script id="typing-animation-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            const roles = [
+                'Senior Technical Lead & Product Owner',
+                'Solutions Consultant',
+                'Full-Stack Developer',
+                'Innovation Leader',
+                'Technical Solution Architect',
+                'Tech Entrepreneur'
+            ];
+            let currentRole = 0;
+            let currentChar = 0;
+            let isDeleting = false;
+            const typingElement = document.getElementById('typing-text');
+            function typeRole() {
+                const role = roles[currentRole];
+                if (isDeleting) {
+                    typingElement.textContent = role.substring(0, currentChar - 1);
+                    currentChar--;
+                } else {
+                    typingElement.textContent = role.substring(0, currentChar + 1);
+                    currentChar++;
+                }
+                let typeSpeed = isDeleting ? 50 : 100;
+                if (!isDeleting && currentChar === role.length) {
+                    typeSpeed = 2000;
+                    isDeleting = true;
+                } else if (isDeleting && currentChar === 0) {
+                    isDeleting = false;
+                    currentRole = (currentRole + 1) % roles.length;
+                    typeSpeed = 500;
+                }
+                setTimeout(typeRole, typeSpeed);
+            }
+            typeRole();
+        });
+    </script>
+    <script id="skill-bars-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: '0px 0px -100px 0px'
+            };
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const skillBars = entry.target.querySelectorAll('.skill-bar');
+                        skillBars.forEach(bar => {
+                            setTimeout(() => {
+                                bar.classList.add('animate');
+                            }, 200);
+                        });
+                    }
+                });
+            }, observerOptions);
+            const aboutSection = document.getElementById('about');
+            if (aboutSection) {
+                observer.observe(aboutSection);
+            }
+        });
+    </script>
+    <script id="timeline-animation-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            const timelineObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.3,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            document.querySelectorAll('.timeline-item').forEach(item => {
+                timelineObserver.observe(item);
+            });
+        });
+    </script>
+    <script id="form-handling-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('#contact form');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+                setTimeout(() => {
+                    submitBtn.textContent = 'Message Sent!';
+                    submitBtn.classList.remove('gradient-bg');
+                    submitBtn.classList.add('bg-green-500');
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.classList.remove('bg-green-500');
+                        submitBtn.classList.add('gradient-bg');
+                        submitBtn.disabled = false;
+                        form.reset();
+                    }, 2000);
+                }, 1500);
+            });
+        });
+    </script>
+</body>
+
+</html>
